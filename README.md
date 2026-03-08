@@ -14,6 +14,8 @@ Nuxt4 + shadcn-vue をベースにした管理画面向けテンプレート。
 
 # Sccreenshot
 
+設定画面で検索パネルの位置を横配置、縦配置に変更できます。
+
 ![Screenshot1](images/dark-split.png)
 ![Screenshot2](images/dark-stock.png)
 
