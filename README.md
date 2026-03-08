@@ -12,6 +12,13 @@ Nuxt4 + shadcn-vue をベースにした管理画面向けテンプレート。
 
 ---
 
+# Sccreenshot
+
+![ScreenshotDark](images/dark.png)
+![ScreenshotLight](images/light.png)
+
+---
+
 # Architecture
 
 このテンプレートは **Core + Feature Layer 構成**になっています。
