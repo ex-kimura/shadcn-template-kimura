@@ -14,8 +14,8 @@ Nuxt4 + shadcn-vue をベースにした管理画面向けテンプレート。
 
 # Sccreenshot
 
-![ScreenshotDark](images/dark.png)
-![ScreenshotLight](images/light.png)
+![Screenshot1](images/dark-split.png)
+![Screenshot2](images/dark-stock.png)
 
 ---
 
