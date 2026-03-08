@@ -1,0 +1,70 @@
+/* アプリ用CSS定義 */
+body {
+  font-family:
+    'Inter',
+    'Noto Sans JP',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+}
+
+:root {
+  /* デフォルトより濃く */
+  --border: oklch(0.82 0 0);
+  /* 入力欄の枠線をさらに濃く */
+  --input: oklch(0.75 0 0);
+}
+.dark {
+  /* デフォルトより濃く */
+  --border: oklch(1 0 0 / 30%);
+  --input: oklch(1 0 0 / 35%);
+}
+
+/* Light時：入力系は白背景 */
+:root input,
+:root textarea,
+:root select,
+:root input[type="checkbox"],
+:root input[type="radio"]
+{
+  background-color: oklch(1 0 0) !important;
+}
+
+/* Dark時：従来通り（透明に戻すなら） */
+.dark input,
+.dark textarea,
+.dark select,
+:root input[type="checkbox"],
+:root input[type="radio"]
+{
+  background-color: transparent !important;
+}
+
+/* ===== placeholder を見やすく薄く ===== */
+
+/* Light */
+::placeholder {
+  color: oklch(0.85 0 0);
+  opacity: 1;
+}
+
+/* Dark */
+.dark ::placeholder {
+  color: oklch(0.72 0 0 / 70%);
+  opacity: 1;
+}
+
+/* ボタンHover時にカーソルを表示 */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    @apply cursor-pointer;
+  }
+
+  button:disabled,
+  [role="button"][aria-disabled="true"] {
+    @apply cursor-not-allowed;
+  }
+}
+

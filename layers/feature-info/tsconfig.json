@@ -1,0 +1,28 @@
+{
+  "extends": "../../.nuxt/tsconfig.app.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./app/*",
+        "../../app/*",
+        "../../assets/*",
+        "../../public/*"
+      ],
+      "~/*": [
+        "./app/*",
+        "../../app/*",
+        "../../assets/*",
+        "../../public/*"
+      ]
+    }
+  },
+  "include": [
+    "./app/**/*",
+    "../../app/**/*",
+    // Nuxtの自動インポート/コンポーネント型
+    "../../.nuxt/**/*.d.ts",
+    // 補完が不安定ならtsも含める
+    "../../.nuxt/**/*.ts"
+  ]
+}

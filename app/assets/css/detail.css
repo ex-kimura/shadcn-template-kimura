@@ -1,0 +1,64 @@
+@reference "./tailwind.css";
+
+@layer components {
+  /* dl 本体（外枠 + PCは2列グリッド、gapは作らない） */
+  .detail-kv {
+    @apply rounded-md border border-border bg-accent dark:bg-accent py-4;
+  }
+
+  /* 行（スマホはこのdivが行になる / PCはcontentsで消す） */
+  .detail-kv-row {
+    /* @apply border-b border-border last:border-b-0; */
+    @apply p-0 m-0;
+  }
+
+  /* dt/dd 共通（スマホ） */
+  .detail-kv dt {
+    @apply px-4 pt-3 text-xs font-medium text-muted-foreground;
+  }
+  .detail-kv dd {
+    @apply px-4 pb-0 text-sm font-medium min-w-0;
+  }
+  .detail-kv dd > * {
+    @apply block wrap-break-word;
+  }
+
+  /* ==== PC (md以上) ==== */
+  @media (min-width: 768px) {
+    .detail-kv {
+      @apply grid grid-cols-[max-content_1fr];
+      column-gap: 0; /* 念のため完全ゼロ */
+    }
+
+    .detail-kv-row {
+      @apply contents;
+    }
+
+    .detail-kv dt {
+      @apply py-3 text-sm whitespace-nowrap bg-muted/30;
+       display: flex;
+       align-items: center;
+    }
+
+    .detail-kv dd {
+      /* @apply py-3 text-base border-l border-border; */
+      margin: 0; /* 念のため */
+    }
+
+    /* 横罫線：最終行以外は dt/dd 両方に border-b（左右つながる） */
+    /* .detail-kv > .detail-kv-row:not(:last-child) > dt,
+    .detail-kv > .detail-kv-row:not(:last-child) > dd {
+      @apply border-b border-border;
+    } */
+  }
+
+  /* ==== edit のときだけスマホで dt と入力の間を空ける ==== */
+  .detail-kv--edit dd {
+    margin-top: 10px; /* スマホだけ */
+  }
+  @media (min-width: 768px) {
+    .detail-kv--edit dd {
+      margin-top: 0; /* PCは0 */
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@layer components {
+  /* 1行：モバイルは縦 */
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  /* md以上：横（左列=ラベル列要素の実幅） */
+  @media (min-width: 768px) {
+    .form-row {
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  /* ★ラベル列（ここに “デフォルト幅” を入れる） */
+  .form-label-col {
+    display: block;
+    min-width: 0;
+  }
+
+  @media (min-width: 768px) {
+    .form-label-col {
+      width: 12rem; /* ← デフォルト幅（ここを変える） */
+    }
+  }
+
+  /* ラベル本体：固定列の中で折り返す */
+  .form-label {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere; /* 英語/URLも折る */
+    line-height: 1.375;
+  }
+
+  @media (min-width: 768px) {
+    .form-label {
+      text-align: right;
+    }
+  }
+
+  /* input側 */
+  .form-control {
+    min-width: 0;
+  }
+}
+
+/* スマホで位置ずれ */
+@media (max-width: 768px) {
+  input, textarea, select {
+    font-size: max(16px, 1em) !important;
+  }
+}

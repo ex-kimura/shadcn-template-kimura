@@ -1,0 +1,36 @@
+{
+  // 自動整形の設定
+  "eslint.useFlatConfig": true,
+  "eslint.probe": ["vue", "javascript", "typescript"],
+  "eslint.validate": ["vue", "javascript", "typescript"],
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "eslint.format.enable": true,
+  "[vue]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+  "[javascript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+  "[typescript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.formatOnSave": false,
+  // 拡大縮小
+  "editor.mouseWheelZoom": true,
+  // フォルダ非表示
+  "files.exclude": {
+    "**/.nuxt": true,
+    "**/node_modules": true,
+    "**/components.d.ts": true
+  },
+  // 検索対象外
+  "search.exclude": {
+    "**/.nuxt": true,
+    "**/node_modules": true,
+    "**/components/ui/**": true,
+    "**/components.d.ts": true
+  },
+  // コンポーネント追加する度に開くの面倒なので除外
+  "files.watcherExclude": {
+    "**/components.d.ts": true
+  },
+  // GitLenz入れている場合、現在カーソル行にGit情報が表示されて見難いので表示しない
+  "gitlens.currentLine.enabled": false
+}
